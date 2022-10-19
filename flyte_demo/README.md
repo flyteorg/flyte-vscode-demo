@@ -23,7 +23,7 @@ should be presented via the Flyte VSCode extension in the following order:
 3. Executing Workflows Locally: `pyflyte run flyte_workflow.py training_workflow`
 4. Executing Workflows on a Flyte Cluster: `pyflyte run --remote flyte_workflow.py training_workflow`
 5. Inspect the Results: `flyte_demo/inspecting_results.ipynb`
-6. Next Steps:
+6. Next Steps: TODO
 
 
 
