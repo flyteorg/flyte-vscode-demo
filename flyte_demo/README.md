@@ -22,8 +22,9 @@ should be presented via the Flyte VSCode extension in the following order:
 2. Convert your Python Workflow to a Flyte Workflow: `flyte_demo/workflows/flyte_workflow.py`
 3. Executing Workflows Locally: `pyflyte run flyte_workflow.py training_workflow`
 4. Executing Workflows on a Flyte Cluster: `pyflyte run --remote flyte_workflow.py training_workflow`
-5. Inspect the Results: `flyte_demo/inspecting_results.ipynb`
-6. Next Steps: TODO
+5. Inspect the Results on Flyte console
+6. Interacting with the Flyte Console: `flyte_demo/interact_with_a_flyte_cluster.ipynb`
+6. What's Next: `flyte_demo/whats_next.md`
 
 
 
