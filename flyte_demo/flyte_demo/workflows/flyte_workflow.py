@@ -1,19 +1,3 @@
-"""Convert your Python Workflow to a Flyte Workflow
-
-Next, we'll see how easy it is to port our plain Python workflow to a
-Flyte workflow. Simply decorate the three functions with the `@task`
-decorator and the main `training_workflow` entrypoint with the `@workflow`
-decorator, and you're set!
-
-Tasks are the fundamental units of compute in Flyte. You can think of them
-as pure, containerized functions that understand the input and output types
-based on the type hints that you give it.
-
-Workflows allow you to combine these tasks together into more complex
-pipelines, where data is passed from one task to the next automatically, so
-you don't have to worry about how it's serialized and deserialized.
-"""
-
 import pandas as pd
 from sklearn.datasets import load_wine
 from sklearn.linear_model import LogisticRegression
@@ -22,6 +6,7 @@ from flytekit import task, workflow
 from flytekit.types.pickle import FlytePickle
 
 
+# 🧱 @task decorators define the building blocks of your pipeline
 @task
 def get_data() -> pd.DataFrame:
     return load_wine(as_frame=True).frame
@@ -39,6 +24,7 @@ def train_model(data: pd.DataFrame) -> FlytePickle:
     return LogisticRegression(max_iter=1000).fit(features, target)
 
 
+# 🔀 @workflows decorators define the flow of data through the tasks
 @workflow
 def training_workflow() -> FlytePickle:
     data = get_data()
@@ -47,4 +33,7 @@ def training_workflow() -> FlytePickle:
 
 
 if __name__ == "__main__":
+    # You can run this script with pre-defined arguments with `python flyte_workflow.py`
+    # but we recommend running it with the `pyflyte run` CLI command, as you'll see in
+    # the next step of this walkthrough.
     print(f"Running training_workflow() {training_workflow()}")

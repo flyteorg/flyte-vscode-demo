@@ -1,6 +1,6 @@
 # Flyte Hosted Sandbox Demo
 
-A template for the recommended layout of a Flyte enabled repository for code written in python using [flytekit](https://docs.flyte.org/projects/flytekit/en/latest/).
+This repo contains source code for the [sandbox.union.ai](https://sandbox.union.ai/) demo.
 
 ## Setup
 
@@ -18,14 +18,14 @@ export FLYTE_AWS_SECRET_ACCESS_KEY="miniostorage"
 This repo contains scripts and notebooks that contained in this notebook
 should be presented via the Flyte VSCode extension in the following order:
 
-1. Create a Model Training Workflow in Python: `flyte_demo/workflows/python_workflow.py`
-2. Convert your Python Workflow to a Flyte Workflow: `flyte_demo/workflows/flyte_workflow.py`
-3. Executing Workflows Locally: `pyflyte run flyte_workflow.py training_workflow`
-4. Executing Workflows on a Flyte Cluster: `pyflyte run --remote flyte_workflow.py training_workflow`
-5. Inspect the Results on Flyte console
-6. Interacting with the Flyte Console: `flyte_demo/interact_with_a_flyte_cluster.ipynb`
-6. What's Next: `flyte_demo/whats_next.md`
-
+1. Create a Model Training Workflow in Python: `flyte_demo/workflows/python_workflow.py` (with corresponding `.md` file)
+2. Convert your Python Workflow to a Flyte Workflow: `flyte_demo/workflows/flyte_workflow.py` (with corresponding `.md` file)
+2. Executing your Flyte Workflows: `flyte_demo/executing_workflows.md`
+3. Inspect the Results on Flyte console: `flyte_demo/inspect_the_results.md`
+4. Interacting with the Flyte Console: `flyte_demo/interact_with_a_flyte_cluster.ipynb`
+5. Iterating on your Workflows: `flyte_demo/workflows/iterating.py` (with corresponding `.md` file)
+6. Parallelizing your Workflows: `flyte_demo/workflows/parallelism.py` (with corresponding `.md` file)
+7. What's Next: `flyte_demo/whats_next.md`
 
 
 ## NOTE
