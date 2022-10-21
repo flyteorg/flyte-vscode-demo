@@ -24,5 +24,5 @@ as follows:
 You can now run your gridsearch experiment with `pyflyte run`:
 
 ```
-pyflyte run --remote flyte_demo/workflows/parallelism.py training_workflow --hyperparameters '[{"C": 0.1}, {"C": 0.01}, {"C": 0.001}]'
+pyflyte run --remote flyte_demo/workflows/parallelism.py training_workflow --hp_grid '[{"C": 0.1}, {"C": 0.01}, {"C": 0.001}]'
 ```

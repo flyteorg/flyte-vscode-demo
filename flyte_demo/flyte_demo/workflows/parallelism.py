@@ -6,30 +6,9 @@ from dataclasses_json import dataclass_json
 from sklearn.datasets import load_wine
 from sklearn.linear_model import LogisticRegression
 
-from flytekit import task, workflow, kwtypes, map_task
+from flytekit import task, workflow, map_task
 from flytekit.types.pickle import FlytePickle
 from flytekit.types.structured import StructuredDataset
-
-
-WineDataset = Annotated[
-    StructuredDataset,
-    kwtypes(
-        alcohol=float,
-        malic_acid=float,
-        ash=float,
-        alcalinity_of_ash=float,
-        magnesium=float,
-        total_phenols=float,
-        flavanoids=float,
-        nonflavanoid_phenols=float,
-        proanthocyanins=float,
-        color_intensity=float,
-        hue=float,
-        od280_od315_of_diluted_wines=float,
-        proline=float,
-        target=int,
-    )
-]
 
 
 # 📦 Define a TrainArgs dataclass to contain hyperparameters and the dataset
@@ -37,7 +16,7 @@ WineDataset = Annotated[
 @dataclass
 class TrainArgs:
     hyperparameters: dict
-    data: WineDataset
+    data: StructuredDataset
 
 
 @task
@@ -53,7 +32,7 @@ def process_data(data: pd.DataFrame) -> pd.DataFrame:
 # 🧱 Define a prepare_train_args task to prepare the collection of inputs to
 # the map task
 @task
-def prepare_train_args(hp_grid: List[dict], data: WineDataset) -> List[TrainArgs]:
+def prepare_train_args(hp_grid: List[dict], data: StructuredDataset) -> List[TrainArgs]:
     return [TrainArgs(hp, data) for hp in hp_grid]
 
 

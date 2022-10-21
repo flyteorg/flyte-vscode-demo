@@ -26,6 +26,13 @@ the full power of Flyte!
   deploy a Flyte cluster using [AWS](https://docs.flyte.org/en/latest/deployment/aws/manual.html#deployment-aws-manual) or [GCP](https://docs.flyte.org/en/latest/deployment/gcp/manual.html#deployment-gcp-manual), and learn how to configure it to enable Flyte's
   [backend plugins](https://docs.flyte.org/en/latest/deployment/plugin_setup/index.html#deployment-plugin-setup).
 
+
+## Write your own workflows
+
+Use this sandbox environment to try creating your own workflows based on what you learn!
+Make sure *not to use any sensitive data 📊*  or *proprietary code 💻* in this environment,
+and have fun!
+
 ## What if I have questions?
 
 Join us on **[Slack](https://join.slack.com/t/flyte-org/shared_invite/zt-1citnqimc-A8NuS9b0qFiqn_yrRCaxtQ)** and don't hesitate to reach out to us
