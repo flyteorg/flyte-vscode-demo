@@ -1,6 +1,7 @@
 # Inspect the Results
 
-Navigate to the URL produced as the result of running pyflyte run. This will take you to FlyteConsole, the web UI used to manage Flyte entities such as tasks, workflows, and executions.
+Navigate to the URL produced as the result of running pyflyte run. This will take you to FlyteConsole, the web UI used
+to manage Flyte entities such as tasks, workflows, and executions.
 
 <!-- gif -->
 

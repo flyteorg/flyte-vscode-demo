@@ -4,9 +4,11 @@ The training workflow we've been working with so far works, but to
 make it even more useful, we can leverage some more built-in Flyte
 features, which you can see in `iterating.py`.
 
+<!-- button: Open Python Workflow -->
+
 ## Structured Datasets
 
-Flyte come with its own type system, supporting almost all of the
+Flyte comes with its own type system, supporting almost all of the
 [built-in Python types](https://docs.flyte.org/projects/cookbook/en/latest/auto/core/type_system/flyte_python_types.html#sphx-glr-auto-core-type-system-flyte-python-types-py),
 but it also exposes a [`StructuredDataset`](https://docs.flyte.org/projects/cookbook/en/latest/auto/core/type_system/structured_dataset.html) type,
 which we can use to create types for objects like `pandas.DataFrame`s.
@@ -33,3 +35,6 @@ Once you're happy with the updates, simply rerun it with:
 ```
 pyflyte run --remote flyte_demo/workflows/iterating.py training_workflow --hyperparameters '{"C": 0.1, "max_iter": 1000}'
 ```
+
+
+<!-- button: Run remotely on terminal -->

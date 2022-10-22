@@ -6,6 +6,8 @@ You can run the `training_workflow` locally with:
 pyflyte run flyte_demo/workflows/flyte_workflow.py training_workflow
 ```
 
+<!-- Run locally in terminal -->
+
 Although this may not catch all the errors you may encounter in production,
 doing this helps during the development and debugging process.
 
@@ -15,6 +17,8 @@ on a Flyte cluster with the `--remote` flag:
 ```
 pyflyte run --remote flyte_demo/workflows/flyte_workflow.py training_workflow
 ```
+
+<!-- Run remotely in terminal -->
 
 **Expected output:** You should see a URL to the workflow execution on your demo Flyte cluster:
 

@@ -5,6 +5,8 @@ Flyte workflow. Simply decorate the three functions with the `@task`
 decorator and the main `training_workflow` entrypoint with the `@workflow`
 decorator, and you're set!
 
+<!-- button: Open Python Workflow -->
+
 **Tasks** are the fundamental units of compute in Flyte. You can think of them
 as pure, containerized functions that understand the input and output types
 based on the type hints that you give it.
@@ -19,7 +21,9 @@ workflow:
 
 1. The function signatures have type hints for input arguments and outputs.
    This is because Flyte is a strongly typed orchestration language, allowing
-   it to analyze the compatibility of tasks even before running the code.
+   it to analyze the compatibility of tasks even before running the code. Notice
+   that we're using the `FlytePickle` type to serialize the output of `train_model`
+   to a pickle file.
 2. Inside the `training_workflow`, tasks are invoked with keyword arguments
    (`process_data(data=data)`) instead of positional arguments
    (`process_data(data)`). Flyte workflow syntax is actually a DSL

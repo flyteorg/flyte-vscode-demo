@@ -2,6 +2,8 @@
 
 Flyte also provides built-in constructs for parallelizing your tasks.
 
+<!-- button: Open Python Workflow -->
+
 In this example, we're extending our training workflow to implement a simple
 gridsearch workflow leveraging the [`map_task`](https://docs.flyte.org/projects/cookbook/en/latest/auto/core/control_flow/map_task.html#) construct.
 
@@ -26,3 +28,5 @@ You can now run your gridsearch experiment with `pyflyte run`:
 ```
 pyflyte run --remote flyte_demo/workflows/parallelism.py training_workflow --hp_grid '[{"C": 0.1}, {"C": 0.01}, {"C": 0.001}]'
 ```
+
+<!-- button: Run remotely on terminal -->

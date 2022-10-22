@@ -30,7 +30,7 @@ the full power of Flyte!
 ## Write your own workflows
 
 Use this sandbox environment to try creating your own workflows based on what you learn!
-Make sure *not to use any sensitive data 📊*  or *proprietary code 💻* in this environment,
+Make sure **not to use any sensitive data 📊**  or **proprietary code 💻** in this environment,
 and have fun!
 
 ## What if I have questions?

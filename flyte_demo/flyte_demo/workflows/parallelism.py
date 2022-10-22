@@ -21,11 +21,13 @@ class TrainArgs:
 
 @task
 def get_data() -> pd.DataFrame:
+    """Get the wine dataset."""
     return load_wine(as_frame=True).frame
 
 
 @task
 def process_data(data: pd.DataFrame) -> pd.DataFrame:
+    """Simplify the task from a 3-class to a binary classification problem."""
     return data.assign(target=lambda x: x["target"].where(x["target"] == 0, 1))
 
 
@@ -39,6 +41,7 @@ def prepare_train_args(hp_grid: List[dict], data: StructuredDataset) -> List[Tra
 # ✨ Update the train_model task to accept a single argument of type TrainArgs
 @task(cache=True, cache_version="1", retries=3)
 def train_model(args: TrainArgs) -> FlytePickle:
+    """Train a model on the wine dataset."""
     data: pd.DataFrame = args.data.open(pd.DataFrame).all()
     features = data.drop("target", axis="columns")
     target = data["target"]
@@ -47,6 +50,7 @@ def train_model(args: TrainArgs) -> FlytePickle:
 
 @workflow
 def training_workflow(hp_grid: List[dict]) -> List[FlytePickle]:
+    """Put all of the steps together into a single workflow."""
     data = get_data()
     processed_data = process_data(data=data)
     # 🎁 wrap the train_model task in map_task, with a concurrency of 5 executions
